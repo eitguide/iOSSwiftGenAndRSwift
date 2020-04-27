@@ -1,0 +1,21 @@
+xcassets:
+  inputs:
+    - iOSResource
+  outputs:
+    - templateName: swift4
+      output: iOSResource/Generated/AssetImages.swift
+
+plist:
+  inputs:
+    - iOSResource
+  outputs:
+    - templateName: runtime-swift4
+      output: iOSResource/Generated/Plist.swift
+
+storyboards:
+  inputs:
+    - iOSResource/
+  outputs:
+    - templateName: runtime-swift4
+      output: iOSResource/Generated/Storyboard.swift
+
