@@ -1,0 +1,3 @@
+GreenSea    : #16a085
+Silver      : #bdc3c7
+Carrot      : #e67e22

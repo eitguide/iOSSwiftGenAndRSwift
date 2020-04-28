@@ -114,6 +114,28 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.file` struct is generated, and contains static references to 2 files.
+  struct file {
+    /// Resource file `articles.json`.
+    static let articlesJson = Rswift.FileResource(bundle: R.hostingBundle, name: "articles", pathExtension: "json")
+    /// Resource file `colors.txt`.
+    static let colorsTxt = Rswift.FileResource(bundle: R.hostingBundle, name: "colors", pathExtension: "txt")
+
+    /// `bundle.url(forResource: "articles", withExtension: "json")`
+    static func articlesJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.articlesJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "colors", withExtension: "txt")`
+    static func colorsTxt(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.colorsTxt
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.image` struct is generated, and contains static references to 510 images.
   struct image {
     /// Image `Dot`.
@@ -4706,6 +4728,66 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.video_border, compatibleWith: traitCollection)
     }
     #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.sampleString` struct is generated, and contains static references to 3 localization keys.
+    struct sampleString {
+      /// Value: normal value
+      static let normal_key = Rswift.StringResource(key: "normal_key", tableName: "SampleString", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: value %@
+      static let string_key = Rswift.StringResource(key: "string_key", tableName: "SampleString", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: value %d
+      static let int_key = Rswift.StringResource(key: "int_key", tableName: "SampleString", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: normal value
+      static func normal_key(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("normal_key", tableName: "SampleString", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "SampleString", preferredLanguages: preferredLanguages) else {
+          return "normal_key"
+        }
+
+        return NSLocalizedString("normal_key", tableName: "SampleString", bundle: bundle, comment: "")
+      }
+
+      /// Value: value %@
+      static func string_key(_ value1: String, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("string_key", tableName: "SampleString", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "SampleString", preferredLanguages: preferredLanguages) else {
+          return "string_key"
+        }
+
+        let format = NSLocalizedString("string_key", tableName: "SampleString", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// Value: value %d
+      static func int_key(_ value1: Int, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("int_key", tableName: "SampleString", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "SampleString", preferredLanguages: preferredLanguages) else {
+          return "int_key"
+        }
+
+        let format = NSLocalizedString("int_key", tableName: "SampleString", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      fileprivate init() {}
+    }
 
     fileprivate init() {}
   }

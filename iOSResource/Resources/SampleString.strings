@@ -1,0 +1,12 @@
+/* 
+  ZaloPay.strings
+  iOSResource
+
+  Created by Nguyen Van Nghia on 4/28/20.
+  Copyright © 2020 Nguyen Van Nghia. All rights reserved.
+*/
+
+"string_key" = "value %@";
+"int_key" = "value %d";
+"normal_key" = "normal value";
+

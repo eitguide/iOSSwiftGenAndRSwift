@@ -12,10 +12,30 @@ plist:
     - templateName: runtime-swift4
       output: iOSResource/Generated/Plist.swift
 
-storyboards:
+strings:
   inputs:
-    - iOSResource/
+    - iOSResource/Resources/SampleString.strings
+  outputs:
+    - templateName: structured-swift4
+      output: iOSResource/Generated/SampleString.swift
+
+colors:
+  inputs:
+    - iOSResource/Resources/colors.txt
+  outputs:
+    - templateName: swift4
+      output: iOSResource/Generated/SampleColor.swift
+json:
+  inputs:
+    - iOSResource/Resources/articles.json
   outputs:
     - templateName: runtime-swift4
-      output: iOSResource/Generated/Storyboard.swift
+      output: iOSResource/Generated/SampleJson.swift
+
+# storyboards:
+#   inputs:
+#     - iOSResource/Base.lproj/Main.storyboard
+#   outputs:
+#     - templateName: segues-swift4
+#       output: iOSResource/Generated/Storyboard.swift
 

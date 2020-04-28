@@ -17,7 +17,16 @@ class ViewController: UIViewController {
         
         backgroundImageView.image = Asset.equipmentFailLoad.image
         
-        R.storyboard.launchScreen
+        view.backgroundColor = ColorName.carrot.color
+        
+        print(L10n.normalKey)
+        print(L10n.intKey(10))
+        print(L10n.stringKey("value"))
+        
+        
+        print(JSONFiles.data)
+        print(JSONFiles.included)
+        
     }
 
 
